@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../public/css/style.css"/>
+</head>
+
+<body>
+    <%- include('components/header') %>
+
+
+
+        id: <%= tache.id_tache %>
+            <br />
+            desciption : <p>
+                <%= tache.description_tache %>
+            </p>
+                <br />
+                date :<%= tache.date_creation_tache.toLocaleDateString() %>
+                    <br />
+                    id liste : <a href="/liste/<%= tache.nom_liste_taches %>">
+                        <%= tache.nom_liste_taches %>
+                    </a>
+                    <br />
+                    fini ou pas :<%= tache.fini_tache %>
+
+                        <p>
+                            <a class="delete" data-liste="<%= tache.nom_liste_taches %>" href="#">
+                                supprimer</a>
+                            <a class="edit" href="/edit/<%= tache.id_tache %>">Modifier</a>
+                            <!-- /edit/<%= tache.id_tache %> -->
+                        </p>
+
+                        <script src="../public/js/deleteTaskConfirm.js"></script>
+
+</body>
+
+</html>
