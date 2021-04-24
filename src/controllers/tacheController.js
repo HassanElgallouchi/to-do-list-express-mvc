@@ -34,7 +34,6 @@ exports.getOne = (request, response) => {
 
 exports.delete = (request, response) => {
     const { id } = request.params;
-    console.log("id =", id);
     // response.send(id)
     Tache.getOneTask(id, (errorcat, rows) => {
         if (errorcat) {
@@ -61,9 +60,10 @@ exports.delete = (request, response) => {
                                             response.redirect('/');
                                         }
                                     })
-
+                                    
                                 }
-
+                                
+                                response.redirect('/');
                             }
                         })
                 }
