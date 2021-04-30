@@ -1,0 +1,48 @@
+.list-items {
+
+}
+.list-items ul {
+
+}
+.list-items ul li {
+    margin-bottom: 1rem;
+}
+.list-items ul li a {
+    background-color: #f605;
+    padding: 1rem;
+    border-radius: .3rem;
+    display: inline-block;
+    width: 100%;
+}
+
+.form-items {
+
+}
+.form-items form {
+
+}
+.form-items form p {
+
+}
+.form-items  textarea {
+    width: 100%;
+    padding: 1rem;
+    border-radius: .3rem;
+    border: none;
+    outline: none;
+}
+.form-items form p input {
+
+}
+.form-items form p datalist {
+
+}
+.form-items form p datalist option {
+
+}
+.form-items form p input[type=text] {
+
+}
+.form-items form p input[type=submit] {
+
+}
