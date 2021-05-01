@@ -17,4 +17,9 @@ router.post("/edit/:id", tacheController.editTask);
 router.get("/liste", tacheController.getAllList);
 router.get("/liste/:liste", tacheController.getOneList);
 
+// page not found 
+router.use("*", (req, res) => {
+    res.render("notFound.ejs");
+})
+
 module.exports = router;
