@@ -1,48 +1,206 @@
-.list-items {
+/************************ Header *************************/
+header {
+  background-color: rgb(32, 45, 71);
+  margin-bottom: 1rem;
+  padding: 0.5rem 0;
+  position: sticky;
+  top: 0;
+}
+header .container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+header .container a {
+  color: #fff;
+}
 
+/************************* Liste des Taches **********************/
+.list-items {
 }
 .list-items ul {
-
 }
 .list-items ul li {
-    margin-bottom: 1rem;
+  margin-bottom: 1rem;
 }
 .list-items ul li a {
-    background-color: #f605;
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 0.3rem;
+  display: inline-block;
+  width: 100%;
+}
+
+.form-items {
+}
+.form-items form {
+  background-color: #ccc;
+  padding: 0.5rem;
+  border-radius: 0.3rem;
+}
+.form-items form p {
+}
+.form-items textarea {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 0.3rem;
+  border: none;
+  outline: none;
+}
+.form-items form p input {
+}
+.form-items form p datalist {
+}
+.form-items form p datalist option {
+}
+.form-items form p.text {
+  position: relative;
+}
+.form-items form p input[type="text"] {
+  width: 100%;
+  border: none;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  border-radius: 0.3rem;
+}
+.form-items form p input[type="submit"] {
+  background-color: rgb(0, 132, 255);
+  padding: 0.5rem 1rem;
+  border-radius: 0.3rem;
+  color: #fff;
+  border: none;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+/************************** Tache ************************/
+.description-tache {
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 0.3rem;
+  margin-bottom: 1rem;
+}
+.details-tache {
+  background-color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 0.3rem;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.parametres-tache {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.details-tache span {
+  background-color: #ddd;
+  padding: 0.3rem;
+  border-radius: 0.3rem;
+  font-size: 0.8rem;
+}
+.supprimer {
+  background-color: #f00;
+  color: #fff;
+  padding: 0.3rem 0.5rem;
+  border-radius: 0.2rem;
+  font-size: 0.9rem;
+}
+.modifier {
+  background-color: rgb(0, 132, 255);
+  color: #fff;
+  padding: 0.3rem 0.5rem;
+  border-radius: 0.2rem;
+  font-size: 0.9rem;
+}
+
+/************************ Modifier ************************/
+.modifier-tache {
+}
+.modifier-tache textarea {
+  border: none;
+  border-radius: 0.3rem;
+  padding: 1rem;
+  font-size: 1rem;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  width: 100%;
+  height: 40vh;
+}
+.modifier-tache input[type="submit"] {
+  width: 50%;
+  background-color: rgb(0, 132, 255);
+  padding: 0.3rem 0.5rem;
+  border-radius: 0.2rem;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+.footer-tache {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.footer-tache a {
+  width: 50%;
+  background-color: #6c757d;
+  padding: 0.3rem 0.5rem;
+  color: #fff;
+  font-size: 1rem;
+  border-radius: 0.3rem;
+  margin: 0.3rem;
+  text-align: center;
+}
+
+
+/********************* liste *********************/
+.liste-taches {
+
+}
+.liste-taches h5 {
+  color: #555;
+  border-bottom: 1px solid #6c757d;
+  margin-bottom: 1rem;
+  width: max-content;
+  /* padding-bottom: .3rem; */
+  font-size: .7rem;
+}
+.liste-taches ul {
+
+}
+.liste-taches ul li {
+}
+.liste-taches ul li a {
+  background-color: #fff;
+  margin-bottom: 1rem;
+padding: 1rem;
+width: 100%;
+display: inline-block;
+border-radius: .3rem;
+}
+
+
+/****************** ListCategories *****************/
+.liste-categories {
+
+}
+.liste-categories h4 {
+  
+}
+.liste-categories ul {
+  
+}
+.liste-categories ul li {
+  
+}
+.liste-categories ul li a {
+    background-color: #fff;
     padding: 1rem;
     border-radius: .3rem;
     display: inline-block;
     width: 100%;
-}
-
-.form-items {
-
-}
-.form-items form {
-
-}
-.form-items form p {
-
-}
-.form-items  textarea {
-    width: 100%;
-    padding: 1rem;
-    border-radius: .3rem;
-    border: none;
-    outline: none;
-}
-.form-items form p input {
-
-}
-.form-items form p datalist {
-
-}
-.form-items form p datalist option {
-
-}
-.form-items form p input[type=text] {
-
-}
-.form-items form p input[type=submit] {
-
+    margin-bottom: 1rem;
 }
