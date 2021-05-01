@@ -18,6 +18,11 @@
             <div class="container">
                 <article>
 
+                    <% if(tache === false){ %>
+                        <div class="no-data">
+                            Oops !! Ce lien n'existe plus !!
+                        </div>
+                        <% } else { %>
                     <p class="description-tache">
                         <%= tache.description_tache %>
                     </p>
@@ -37,12 +42,14 @@
                             supprimer</a>
                         <a class="modifier" href="/edit/<%= tache.id_tache %>">Modifier</a>
                     </p>
+                    <% } %>
+                </article>
 
                     <script src="../public/js/deleteTaskConfirm.js"></script>
 
-                </article>
             </div>
         </section>
+
 </body>
 
 </html>
