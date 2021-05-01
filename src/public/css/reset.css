@@ -4,7 +4,9 @@
     box-sizing: border-box;
 }
 body {
-    background-color: #acb;
+    background-color: #e9e9e9;
+    font-size: 1.2rem;
+    font-family: monospace, sans-serif;
 }
 a {
     text-decoration: none;
