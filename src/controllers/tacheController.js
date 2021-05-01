@@ -5,16 +5,15 @@ exports.getAll = (req, res) => {
         if (error) {
             res.send(error.message);
         } else {
+            const categories = new Set(result.map(el => el.nom_liste_taches));
             if (result.length === 0) {
-                res.status(404);
+                res.status(404).render("index.ejs", { result: [], categories});
             } else {
-                const categories = new Set(result.map(el => el.nom_liste_taches));
-                res.render("index.ejs", { result, categories });
+                res.status(200).render("index.ejs", { result, categories });
             }
         }
     })
 }
-
 
 exports.getOne = (request, response) => {
     const id = request.params.id;
@@ -22,11 +21,11 @@ exports.getOne = (request, response) => {
         if (error) {
             response.send(error.message);
         } else {
+            const tache = result[0];
             if (result.length === 0) {
-                response.status(404);
+                response.status(404).render("tache.ejs", { tache: false  });
             } else {
-                const tache = result[0];
-                response.render("tache.ejs", { tache })
+                response.status(200).render("tache.ejs", { tache })
             }
         }
     })
@@ -45,7 +44,6 @@ exports.delete = (request, response) => {
                 if (er) {
                     response.send(er.message);
                 } else {
-                    
                         Tache.deleteTask(id, (e, r) => {
                             if (e) {
                                 response.send(e.message);
@@ -60,20 +58,16 @@ exports.delete = (request, response) => {
                                             response.redirect('/');
                                         }
                                     })
-                                    
+                                } else {
+                                    response.redirect('/');
                                 }
                                 
-                                response.redirect('/');
                             }
                         })
                 }
             })
-
-        
         }
-
     })
-
 }
 
 
@@ -153,7 +147,11 @@ exports.getAllList = (req, res) => {
         if (error) {
             res.send(error.message);
         } else {
-            res.render("listCategories.ejs", { rows });
+            if(rows.length === 0) {
+                res.status(400).render("listCategories.ejs", { rows: false });
+            } else {
+                res.status(200).render("listCategories.ejs", { rows });
+            }
         }
     })
 }
@@ -171,7 +169,6 @@ exports.getOneList = (req, res) => {
                         res.send(error.message);
                     } else {
                         res.render("liste.ejs", { rows });
-                        // res.send(rows)
                     }
                 })
             } else {
@@ -184,3 +181,4 @@ exports.getOneList = (req, res) => {
 
 
 }
+
