@@ -1,19 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../public/css/reset.css"/>
+    <link rel="stylesheet" href="../public/css/main.css"/>
 </head>
+
 <body>
     <%- include("components/header") %>
+        <section>
+            <div class="container">
+                <div class="liste-taches">
+                    <h5>
+                        <a href="/">Accueil</a> >> <a href="/liste/">Catégories</a> >> <a href="/liste/<%= rows[0].nom_liste_taches %>"><%= rows[0].nom_liste_taches %></a></h5>
+                    <ul>
+                        <% rows.forEach(cat=> { %>
+                            <li><a href="/tache/<%= cat.id_tache %>">
+                                    <%= cat.description_tache %>
+                                </a>
+                            </li>
+                            <% }) %>
+                    </ul>
+                </div>
+            </div>
+        </section>
 
-    <ul>
-        <% rows.forEach(cat => { %> 
-            <li><a href="/tache/<%= cat.id_tache %>"><%= cat.description_tache %></a></li>
-        <% }) %>
-    </ul>
-    
 </body>
+
 </html>
