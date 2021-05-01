@@ -18,6 +18,17 @@ header .container a {
 /************************* Liste des Taches **********************/
 .list-items {
 }
+.container h5 {
+  color: #555;
+  border-bottom: 1px solid #6c757d;
+  margin-bottom: 1rem;
+  width: max-content;
+  font-size: 1rem;
+}
+.list-items h5 a {
+  color: #555;
+}
+
 .list-items ul {
 }
 .list-items ul li {
@@ -32,6 +43,7 @@ header .container a {
 }
 
 .form-items {
+margin-bottom: 1rem;
 }
 .form-items form {
   background-color: #ccc;
@@ -54,13 +66,23 @@ header .container a {
 .form-items form p datalist option {
 }
 .form-items form p.text {
-  position: relative;
+  margin-right: .5rem;
+  width: 60%;
+}
+.form-items form p.submit {
+  width: 40%;
+}
+.footer-form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: .5rem;
 }
 .form-items form p input[type="text"] {
   width: 100%;
   border: none;
   padding: 0.5rem;
-  margin-top: 0.5rem;
+  /* padding-right: 0.5rem; */
   border-radius: 0.3rem;
 }
 .form-items form p input[type="submit"] {
@@ -70,7 +92,7 @@ header .container a {
   color: #fff;
   border: none;
   width: 100%;
-  margin-top: 1rem;
+  /* margin-top: 1rem; */
 }
 
 /************************** Tache ************************/
@@ -161,12 +183,14 @@ header .container a {
 
 }
 .liste-taches h5 {
-  color: #555;
   border-bottom: 1px solid #6c757d;
   margin-bottom: 1rem;
   width: max-content;
-  /* padding-bottom: .3rem; */
-  font-size: .7rem;
+  font-size: 1rem;
+  color: #555;
+}
+.liste-taches h5 a {
+  color: #555;
 }
 .liste-taches ul {
 
@@ -187,8 +211,15 @@ border-radius: .3rem;
 .liste-categories {
 
 }
-.liste-categories h4 {
-  
+.liste-categories h5 {
+  color: #555;
+  border-bottom: 1px solid #6c757d;
+  margin-bottom: 1rem;
+  width: max-content;
+  font-size: 1rem;
+}
+.liste-categories h5 a {
+  color: #555;
 }
 .liste-categories ul {
   
