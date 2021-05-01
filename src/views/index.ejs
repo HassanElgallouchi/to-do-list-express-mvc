@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../public/css/reset.css"/>
-    <link rel="stylesheet" href="../public/css/main.css"/>
+    <link rel="stylesheet" href="../public/css/reset.css" />
+    <link rel="stylesheet" href="../public/css/main.css" />
 </head>
 
 <body>
@@ -15,40 +15,53 @@
     <%- include('components/header') %>
         <section>
             <div class="container">
-                <div class="list-items">
-
-                    <ul>
-                        <% result.forEach((element, i)=> { %>
-                            <li id="<%= i %>"><a href="/tache/<%= element.id_tache %>">
-                                    <%= element.description_tache %>
-                                </a></li>
-                            <% }) %>
-                    </ul>
-                </div>
+                <h5><a href="/">Accueil</a></h5>
 
                 <div class="form-items">
 
                     <form action="/post" method="post">
                         <p>
-                            <textarea name="tache" id="tache" rows="3" placeholder="Écrire la tache ici..."></textarea>
+                            <textarea name="tache" id="tache" autofocus rows="3"
+                                placeholder="Écrire la tache ici..."></textarea>
                         </p>
-                        <p class="text">
-                            <input type="text" name="categorie" id="" list="categorie"
-                                placeholder="Rechercher / Ajouter la catégorie" />
-                            <datalist name="categorie" id="categorie">
-                                <option selected disabled value="">-- Catégorie --</option>
-                                <% categories.forEach((cat)=> { %>
-                                    <option value="<%= cat %>">
-                                        <%= cat %>
-                                    </option>
-                                    <% }) %>
-                            </datalist>
-                        </p>
-                        <p>
-                            <input type="submit" value="Envoyer">
-                        </p>
+                        <div class="footer-form">
+                            <p class="text">
+                                <input type="text" name="categorie" id="" list="categorie"
+                                    placeholder="Écrire ici une catégorie..." />
+                                <datalist name="categorie" id="categorie">
+                                    <option selected disabled value="">-- Catégorie --</option>
+                                    <% categories.forEach((cat)=> { %>
+                                        <option value="<%= cat %>">
+                                            <%= cat %>
+                                        </option>
+                                        <% }) %>
+                                </datalist>
+                            </p>
+                            <p class="submit">
+                                <input type="submit" value="Envoyer">
+                            </p>
+                        </div>
                     </form>
                 </div>
+
+                <div class="list-items">
+
+                    <% if(result.length===0 ){ %>
+                        <div class="no-data">
+                            Cette page ne contient pas encore de tache !!
+                        </div>
+                        <% } else { %>
+
+                            <ul>
+                                <% result.forEach((element, i)=> { %>
+                                    <li id="<%= i %>"><a href="/tache/<%= element.id_tache %>">
+                                            <%= element.description_tache %>
+                                        </a></li>
+                                    <% }) %>
+                            </ul>
+                            <% } %>
+                </div>
+
             </div>
         </section>
 
