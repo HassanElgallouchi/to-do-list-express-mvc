@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title><%= tache ? tache.description_tache.slice(0, 15) + '...' : 'pas de tache' %> - ToDoList</title>
     <link rel="stylesheet" href="../public/css/reset.css" />
     <link rel="stylesheet" href="../public/css/main.css" />
 
@@ -27,10 +27,10 @@
                         <%= tache.description_tache %>
                     </p>
                     <p class="details-tache">
-                        <span>
+                        <span>Date : 
                             <%= tache.date_creation_tache.toLocaleDateString() %>
                         </span>
-                        <span>
+                        <span>Liste : 
                             <a href="/liste/<%= tache.nom_liste_taches %>">
                                 <%= tache.nom_liste_taches %>
                             </a>
