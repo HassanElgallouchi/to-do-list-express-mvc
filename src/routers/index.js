@@ -9,7 +9,7 @@ router.get("/tache/:id", tacheController.getOne);
 router.get("/delete/:id", tacheController.delete);
 
 router.post("/post", tacheController.addOne);
-router.get("/post", (req, res) => res.redirect("/"));
+// router.get("/post", (req, res) => res.redirect("/"));
 
 router.get("/edit/:id", tacheController.editOne);
 router.post("/edit/:id", tacheController.editTask);
