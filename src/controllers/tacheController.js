@@ -7,7 +7,7 @@ exports.getAll = (req, res) => {
         } else {
             const categories = new Set(result.map(el => el.nom_liste_taches));
             if (result.length === 0) {
-                res.status(404).render("index.ejs", { result: [], categories});
+                res.status(404).render("index.ejs", { result: [], categories });
             } else {
                 res.status(200).render("index.ejs", { result, categories });
             }
@@ -23,7 +23,7 @@ exports.getOne = (request, response) => {
         } else {
             const tache = result[0];
             if (result.length === 0) {
-                response.status(404).render("tache.ejs", { tache: false  });
+                response.status(404).render("tache.ejs", { tache: false });
             } else {
                 response.status(200).render("tache.ejs", { tache })
             }
@@ -44,26 +44,26 @@ exports.delete = (request, response) => {
                 if (er) {
                     response.send(er.message);
                 } else {
-                        Tache.deleteTask(id, (e, r) => {
-                            if (e) {
-                                response.send(e.message);
+                    Tache.deleteTask(id, (e, r) => {
+                        if (e) {
+                            response.send(e.message);
+                        } else {
+                            // delete list                                 
+                            const rowsCount = result[0].count;
+                            if (rowsCount === 1) {
+                                Tache.deleteCategory(idListe, (erreur, resultat) => {
+                                    if (erreur) {
+                                        response.send(erreur.message);
+                                    } else {
+                                        response.redirect('/');
+                                    }
+                                })
                             } else {
-                                // delete list                                 
-                                const rowsCount = result[0].count;
-                                if (rowsCount === 1) {
-                                    Tache.deleteCategory(idListe, (erreur, resultat) => {
-                                        if (erreur) {
-                                            response.send(erreur.message);
-                                        } else {
-                                            response.redirect('/');
-                                        }
-                                    })
-                                } else {
-                                    response.redirect('/');
-                                }
-                                
+                                response.redirect('/');
                             }
-                        })
+
+                        }
+                    })
                 }
             })
         }
@@ -74,7 +74,7 @@ exports.delete = (request, response) => {
 exports.addOne = (req, res) => {
     const { tache, categorie } = req.body;
     if (!tache || !categorie) {
-        res.send("Champ ne doit pas etre vide !")
+        res.status(400).redirect("/");
     } else {
         Tache.checkByCategory(categorie, (error, result) => {
             if (error) {
@@ -147,7 +147,7 @@ exports.getAllList = (req, res) => {
         if (error) {
             res.send(error.message);
         } else {
-            if(rows.length === 0) {
+            if (rows.length === 0) {
                 res.status(400).render("listCategories.ejs", { rows: false });
             } else {
                 res.status(200).render("listCategories.ejs", { rows });
