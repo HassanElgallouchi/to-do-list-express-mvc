@@ -5,6 +5,11 @@ header {
   padding: 0.5rem 0;
   position: sticky;
   top: 0;
+
+  height: 4rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 header .container {
   display: flex;
@@ -13,6 +18,25 @@ header .container {
 }
 header .container a {
   color: #fff;
+}
+.menu-bar {
+  position: relative;
+  display: block;
+  width: 2rem;
+  height: 2rem;
+}
+.menu-bar span {
+  position: absolute;
+  top: 0;
+  width: 2rem;
+  height: 0.3rem;
+  background-color: #fff;
+}
+.menu-bar span:first-child {
+  top: 20px;
+}
+.menu-bar span:last-child {
+  top: 10px;
 }
 
 /************************* Liste des Taches **********************/
@@ -43,7 +67,7 @@ header .container a {
 }
 
 .form-items {
-margin-bottom: 1rem;
+  margin-bottom: 1rem;
 }
 .form-items form {
   background-color: #ccc;
@@ -66,7 +90,7 @@ margin-bottom: 1rem;
 .form-items form p datalist option {
 }
 .form-items form p.text {
-  margin-right: .5rem;
+  margin-right: 0.5rem;
   width: 60%;
 }
 .form-items form p.submit {
@@ -76,7 +100,7 @@ margin-bottom: 1rem;
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-top: .5rem;
+  margin-top: 0.5rem;
 }
 .form-items form p input[type="text"] {
   width: 100%;
@@ -115,25 +139,26 @@ margin-bottom: 1rem;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  margin-bottom: 1rem;
 }
 .details-tache span {
   background-color: #ddd;
   padding: 0.3rem;
-  border-radius: 0.3rem;
+  border-radius: 0.1rem;
   font-size: 0.8rem;
 }
 .supprimer {
   background-color: #f00;
   color: #fff;
   padding: 0.3rem 0.5rem;
-  border-radius: 0.2rem;
+  border-radius: 0.1rem;
   font-size: 0.9rem;
 }
 .modifier {
   background-color: rgb(0, 132, 255);
   color: #fff;
   padding: 0.3rem 0.5rem;
-  border-radius: 0.2rem;
+  border-radius: 0.1rem;
   font-size: 0.9rem;
 }
 
@@ -177,10 +202,8 @@ margin-bottom: 1rem;
   text-align: center;
 }
 
-
 /********************* liste *********************/
 .liste-taches {
-
 }
 .liste-taches h5 {
   border-bottom: 1px solid #6c757d;
@@ -193,23 +216,20 @@ margin-bottom: 1rem;
   color: #555;
 }
 .liste-taches ul {
-
 }
 .liste-taches ul li {
 }
 .liste-taches ul li a {
   background-color: #fff;
   margin-bottom: 1rem;
-padding: 1rem;
-width: 100%;
-display: inline-block;
-border-radius: .3rem;
+  padding: 1rem;
+  width: 100%;
+  display: inline-block;
+  border-radius: 0.3rem;
 }
-
 
 /****************** ListCategories *****************/
 .liste-categories {
-
 }
 .liste-categories h5 {
   color: #555;
@@ -222,16 +242,29 @@ border-radius: .3rem;
   color: #555;
 }
 .liste-categories ul {
-  
 }
 .liste-categories ul li {
-  
 }
 .liste-categories ul li a {
-    background-color: #fff;
-    padding: 1rem;
-    border-radius: .3rem;
-    display: inline-block;
-    width: 100%;
-    margin-bottom: 1rem;
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 0.3rem;
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+
+/*************** notFound **************/
+.not-found {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #555;
+}
+.not-found a {
+  border: 1px solid #aaa;
+  padding: .3rem .5rem;
+  margin-top: 1rem;
 }
