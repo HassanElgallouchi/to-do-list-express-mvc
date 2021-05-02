@@ -14,7 +14,7 @@ a {
     color: rgb(31, 37, 51);
 }
 .container {
-    width: 80%;
+    width: 50%;
     margin: 0 auto;
 }
 ul {
@@ -28,4 +28,10 @@ ul {
     padding: 5rem 0;
     height: 50vh;
     color: #666;
+  }
+
+  @media screen and (max-width: 480px) {
+      .container {
+          width: 90%;
+      }
   }
